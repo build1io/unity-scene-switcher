@@ -1,6 +1,6 @@
 #if UNITY_EDITOR
 
-namespace Build1.UnitySceneSwitcher
+namespace Build1.UnitySceneSwitcher.Editor
 {
     internal sealed class SceneSwitcherConfiguration
     {

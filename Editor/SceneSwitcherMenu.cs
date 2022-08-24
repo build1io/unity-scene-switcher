@@ -2,7 +2,7 @@
 
 using UnityEditor;
 
-namespace Build1.UnitySceneSwitcher
+namespace Build1.UnitySceneSwitcher.Editor
 {
     internal static class SceneSwitcherMenu
     {

@@ -6,7 +6,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Build1.UnitySceneSwitcher
+namespace Build1.UnitySceneSwitcher.Editor
 {
     [InitializeOnLoad]
     internal static class SceneSwitcherProcessor
