@@ -2,7 +2,7 @@
 
 namespace Build1.UnitySceneSwitcher
 {
-    public sealed class SceneSwitcherConfiguration
+    internal sealed class SceneSwitcherConfiguration
     {
         public string defaultScenePath;
     }
