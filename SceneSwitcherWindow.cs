@@ -12,18 +12,6 @@ namespace Build1.UnitySceneSwitcher
         private const int Height  = 320;
         private const int Padding = 10;
 
-        private static SceneSwitcherWindow _instance; 
-        
-        public SceneSwitcherWindow()
-        {
-            _instance = this;
-        }
-
-        public void OnDestroy()
-        {
-            _instance = null;
-        }
-
         private void OnGUI()
         {
             var changed = false;
@@ -106,10 +94,9 @@ namespace Build1.UnitySceneSwitcher
 
         public static void Open()
         {
-            if (_instance)
+            if (HasOpenInstances<SceneSwitcherWindow>())
             {
-                if (!_instance.hasFocus)
-                    _instance.Focus();
+                FocusWindowIfItsOpen<SceneSwitcherWindow>();
                 return;
             }
             
