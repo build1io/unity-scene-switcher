@@ -11,7 +11,7 @@ namespace Build1.UnitySceneSwitcher.Editor
         private const int Width   = 512;
         private const int Height  = 320;
         private const int Padding = 10;
-
+        
         private void OnGUI()
         {
             var changed = false;
@@ -95,10 +95,7 @@ namespace Build1.UnitySceneSwitcher.Editor
         public static void Open()
         {
             if (HasOpenInstances<SceneSwitcherWindow>())
-            {
-                FocusWindowIfItsOpen<SceneSwitcherWindow>();
                 return;
-            }
             
             var main = EditorGUIUtility.GetMainWindowPosition();
             var centerWidth = (main.width - Width) * 0.5f;
