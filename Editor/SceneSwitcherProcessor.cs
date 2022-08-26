@@ -16,10 +16,15 @@ namespace Build1.UnitySceneSwitcher.Editor
         public static string DefaultScenePath     => _config != null ? _config.defaultScenePath : "None";
         public static bool   DefaultSceneSelected => _config != null && !string.IsNullOrWhiteSpace(_config.defaultScenePath);
 
-        private static readonly string                     _configPath;
-        private static          SceneSwitcherConfiguration _config;
+        private static string                     _configPath;
+        private static SceneSwitcherConfiguration _config;
 
         static SceneSwitcherProcessor()
+        {
+            EditorApplication.delayCall += Initialize;
+        }
+
+        private static void Initialize()
         {
             _configPath = Path.Combine(Application.dataPath, ConfigFileName);
             _config = LoadConfig();
@@ -31,7 +36,7 @@ namespace Build1.UnitySceneSwitcher.Editor
         {
             if (_config == null || !CheckScenePathValidity(_config.defaultScenePath))
             {
-                EditorApplication.delayCall += SceneSwitcherWindow.Open;
+                SceneSwitcherWindow.Open();
                 return;
             }
 
