@@ -95,12 +95,15 @@ namespace Build1.UnitySceneSwitcher.Editor
         public static void Open()
         {
             if (HasOpenInstances<SceneSwitcherWindow>())
+            {
+                FocusWindowIfItsOpen<SceneSwitcherWindow>();
                 return;
-            
+            }
+
             var main = EditorGUIUtility.GetMainWindowPosition();
             var centerWidth = (main.width - Width) * 0.5f;
             var centerHeight = (main.height - Height) * 0.5f;
-
+            
             var window = GetWindow<SceneSwitcherWindow>(true, "Scene Switcher", true);
             window.position = new Rect(main.x + centerWidth, main.y + centerHeight, Width, Height);
             window.minSize = new Vector2(Width, Height);

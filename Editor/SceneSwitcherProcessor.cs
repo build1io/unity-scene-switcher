@@ -31,7 +31,7 @@ namespace Build1.UnitySceneSwitcher.Editor
         {
             if (_config == null || !CheckScenePathValidity(_config.defaultScenePath))
             {
-                SceneSwitcherWindow.Open();
+                EditorApplication.delayCall += SceneSwitcherWindow.Open;
                 return;
             }
 
