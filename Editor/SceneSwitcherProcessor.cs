@@ -96,13 +96,12 @@ namespace Build1.UnitySceneSwitcher.Editor
 
         private static bool CheckScenePathValidity(string path)
         {
-            for (var i = 0; i < SceneManager.sceneCount; i++)
+            for (var i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
             {
-                var scene = SceneManager.GetSceneAt(i);
-                if (scene.path == path)
+                var scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                if (scenePath == path)
                     return true;
-            }
-
+            }            
             return false;
         }
     }
