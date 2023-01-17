@@ -26,7 +26,7 @@ namespace Build1.UnitySceneSwitcher.Editor
 
         private static void Initialize()
         {
-            _configPath = Path.Combine(Application.dataPath, ConfigFileName);
+            _configPath = Path.Combine(Application.dataPath, "Build1", ConfigFileName);
             _config = LoadConfig();
 
             CheckScene();
