@@ -6,7 +6,7 @@ namespace Build1.UnitySceneSwitcher.Editor
 {
     internal static class SceneSwitcherMenu
     {
-        [MenuItem("Tools/Build1/Scene Switcher/Select Default Scene", false, 30)]
+        [MenuItem("Tools/Build1/Scene Switcher/Select Default Scene", false, 1030)]
         public static void ChangeDefaultScene()
         {
             SceneSwitcherWindow.Open();
